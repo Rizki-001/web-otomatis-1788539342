@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak | Portofolio Kreatif</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: { brand: { 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9' } }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold tracking-tight">Kreatif<span class="text-brand-500">.Studio</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-300">
+                <a href="index.html" class="hover:text-brand-500 transition">Beranda</a>
+                <a href="about.html" class="hover:text-brand-500 transition">Tentang Saya</a>
+                <a href="projects.html" class="hover:text-brand-500 transition">Portofolio</a>
+                <a href="contact.html" class="text-brand-500 transition">Kontak</a>
+            </div>
+            <a href="contact.html" class="hidden md:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-medium px-5 py-2.5 rounded-full transition">
+                <span>Mulai Proyek</span>
+            </a>
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300"><i class="fa-solid fa-bars text-2xl"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-6 py-4 space-y-4">
+            <a href="index.html" class="block text-slate-300 font-medium">Beranda</a>
+            <a href="about.html" class="block text-slate-300 font-medium">Tentang Saya</a>
+            <a href="projects.html" class="block text-slate-300 font-medium">Portofolio</a>
+            <a href="contact.html" class="block text-brand-500 font-medium">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="pt-32 pb-20 max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mb-12">
+            <h1 class="text-4xl font-extrabold text-white mb-4">Mari Bekerja Sama</h1>
+            <p class="text-slate-400">Punya proyek menarik atau sekadar ingin bertanya? Silakan kirim pesan melalui formulir di bawah ini.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+            <!-- Contact Info -->
+            <div class="md:col-span-5 space-y-6">
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white">Email</h4>
+                        <p class="text-slate-400 text-sm mt-1">hello@kreatifstudio.com</p>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white">Lokasi</h4>
+                        <p class="text-slate-400 text-sm mt-1">Jakarta, Indonesia</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="md:col-span-7 bg-slate-900 p-8 rounded-2xl border border-slate-800">
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Nama Lengkap</label>
+                        <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-brand-500 transition" placeholder="Masukkan nama Anda">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Alamat Email</label>
+                        <input type="email" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-brand-500 transition" placeholder="nama@email.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Pesan</label>
+                        <textarea rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-brand-500 transition" placeholder="Ceritakan tentang proyek Anda..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3.5 rounded-xl transition shadow-lg shadow-brand-600/30">
+                        Kirim Pesan
+                    </button>
+                    <div id="form-status" class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm text-center">
+                        Pesan Anda berhasil dikirim! Terima kasih telah menghubungi.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center text-slate-400 text-sm">
+            © 2026 Portfolio Kreatif. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
